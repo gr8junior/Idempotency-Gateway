@@ -5,7 +5,6 @@ A RESTful API that guarantees **exactly-once payment processing** using an `Idem
 This project solves the **double-charging problem** caused by network retries by ensuring that duplicate requests return the **same stored response**, instead of being processed again.
 
 ---
-
 #  Features
 
 * Process payments via `POST /process-payment`
@@ -14,7 +13,6 @@ This project solves the **double-charging problem** caused by network retries by
 *  Conflict detection (same key, different payload)
 *  In-flight request handling (race condition safe)
 *  24-hour TTL for idempotency keys (extra feature)
-
 ---
 
 #  Architecture
@@ -51,7 +49,6 @@ sequenceDiagram
 ---
 
 #  Setup Instructions (Windows + VS Code)
-
 ## 1. Prerequisites
 
 Install the following:
@@ -64,7 +61,6 @@ Install the following:
 ---
 
 ## 2. Clone Repository
-
 ```bash
 git clone <your-repo-link>
 cd idempotency-gateway
@@ -73,15 +69,12 @@ cd idempotency-gateway
 ---
 
 ## 3. Run the Project
-
 ### Option A (Recommended – no setup needed)
-
 ```bash
 .\mvnw spring-boot:run
 ```
 
 ### Option B (If Maven installed)
-
 ```bash
 mvn spring-boot:run
 ```
@@ -89,7 +82,6 @@ mvn spring-boot:run
 ---
 
 ## 4. Server
-
 The server starts at:
 
 ```bash
@@ -98,10 +90,9 @@ http://localhost:8080
 
 ---
 
-# 📡 API Documentation
+#  API Documentation
 
 ## 🔹 Endpoint
-
 ### `POST /process-payment`
 
 ---
@@ -269,30 +260,5 @@ Idempotency-Key: test-1
   * Memory leaks
   * Unlimited growth
 * Mimics real-world payment systems
-
----
-
-
-# Pre-Submission Checklist
-
-* [x] Project runs with `mvn spring-boot:run`
-* [x] Endpoint works correctly
-* [x] Idempotency logic implemented
-* [x] In-flight handling works
-* [x] README fully replaced
-* [x] Architecture diagram included
-* [x] API documentation included
-* [x] Public GitHub repository
-
----
-
-#  Summary
-
-This project demonstrates:
-
-* Backend API design
-* Idempotency implementation
-* Concurrency handling
-* Real-world fintech problem solving
 
 ---
