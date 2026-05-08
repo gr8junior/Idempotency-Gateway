@@ -28,7 +28,8 @@ public class IdempotencyStore {
             return response;
         }
     }
-
+    
+// In-memory store with TTL expiration
     private final ConcurrentHashMap<String, Entry> store = new ConcurrentHashMap<>();
     private final long TTL = 24 * 60 * 60 * 1000;
 
@@ -51,7 +52,7 @@ public class IdempotencyStore {
         store.put(key, entry);
         return entry;
     }
-
+// Mark the entry as completed with the response
     public void complete(String key, StoredResponse response) {
         Entry entry = store.get(key);
         if (entry != null) {
