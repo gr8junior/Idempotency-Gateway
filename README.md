@@ -19,7 +19,6 @@ This project solves the **double-charging problem** caused by network retries by
 
 ![Architecture Diagram](image.png)
 
-
 ```mermaid
 sequenceDiagram
     participant Client
@@ -87,6 +86,20 @@ The server starts at:
 
 ```bash
 http://localhost:8080
+```
+
+---
+
+##  Docker Setup
+
+### Build Image
+```bash
+docker build -t idempotency-gateway .
+```
+
+## Run Container
+```bash
+docker run -p 8080:8080 idempotency-gateway
 ```
 
 ---
