@@ -19,6 +19,7 @@ This project solves the **double-charging problem** caused by network retries by
 
 ![Architecture Diagram](image.png)
 
+
 ```mermaid
 sequenceDiagram
     participant Client
@@ -71,7 +72,7 @@ cd idempotency-gateway
 ## 3. Run the Project
 ### Option A (Recommended – no setup needed)
 ```bash
-.\mvnw spring-boot:run
+./mvnw spring-boot:run
 ```
 
 ### Option B (If Maven installed)
